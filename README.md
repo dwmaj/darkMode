@@ -288,7 +288,7 @@ if((!theme && userDark) || (theme === "dark")){
 Voici le code que nous utiliserons pour avoir un darkTheme persitant
 
 ```JAVASCRIPT
-const darkTheme = document.querySelector(".darkmode");
+const darkTheme = document.querySelector(".btn--theme");
 
 //Gérer le data-theme du body
 darkTheme.addEventListener("click", function(){
