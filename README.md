@@ -1,9 +1,9 @@
 # DarkMode
 
-Depuis 2019, de plus en plus d'applications, de sites ou encore d'OS disposent d'un mode sombre «darkMode». Si vous demandez autour de vous pourquoi utiliser un thème sombre, vous allez le plus souvent avoir les réponses suivante:
+Depuis 2019, on voit de plus en plus des applications, des sites ou encore des OS avec un mode sombre «darkMode». Si vous demandez autour de vous pourquoi utiliser un thème sombre, vous allez le plus souvent avoir les réponses suivante:
 
 - ça permet de réduire la fatigue des yeux;
-- on consomme moins d'énergie, donc plus de batterie pour nos téléphone (et c'est même mieux pour la planète);
+- on consomme moins d'énergie, donc plus de batterie pour nos téléphones (et c'est même mieux pour la planète);
 
 Personnellement, je ne suis pas convaincu pour la fatigue de mes yeux, et même si ça permet aux écrans OLED (uniquement) de consommer moins d'énergie, j'ai toujours autant de problème de batterie sur mon téléphone… Je pense juste que certaines personnent préfèrent un mode sombre, ça fait «plus cool».
 
@@ -55,7 +55,7 @@ element{
 }
 ```
 
-Dans notre exemple, nous cherchons à utiliser des variables CSS pour modifier les couleurs de nos éléments. Nous allons avoir besoin de ces variables dans l'ensemble de notre CSS. On parle ici de variable globale. Pour définir une variable globale en CSS on va l'ajouter au `:root`, qui représente la racine de l'arbre représentant le document.
+Dans notre exemple, nous cherchons à utiliser des variables CSS pour modifier les couleurs de nos éléments. Nous allons avoir besoin de ces variables dans l'ensemble de notre CSS. On parle ici d'une variable globale. Pour définir une variable globale en CSS on va l'ajouter au `:root`, qui représente la racine de l'arbre représentant le document.
 
 ```CSS
 :root{
@@ -93,7 +93,7 @@ Voici comment nous allons combiner l'utilisation des variables CSS avec le `pref
 }
 ```
 
-Nous pourrons utiliser ces variables pour construire notre thème et bénéficiez automatiquement d'un changement de thème en fonction des préférences de l'utilisateur.
+Nous pourrons utiliser ces variables pour construire notre thème et bénéficier automatiquement d'un changement de thème en fonction des préférences de l'utilisateur.
 
 ## Comment contrôler le thème avec un bouton?
 
@@ -158,7 +158,7 @@ On utilise le sélecteur d'attribut pour changer nos couleurs:
 
 ### Un choix de thème persistant
 
-Bien que notre exemple fonctionne parfaitement, chaque fois que nous allons changer de page, le choix de thème que nous avions fait grâce à notre bouton ne sera pas sauvegardé. Il faut donc trouver un moyen de stocker le choix de thème que fais l'utilisateur pour avoir un thème persistant entre les changements de page (ou si l'utilisateur revient sur notre site après avoir fermé la page).
+Bien que notre exemple fonctionne parfaitement, chaque fois que nous allons changer de page, le choix de thème que nous avions fait grâce à notre bouton ne sera pas sauvegardé. Il faut donc trouver un moyen de stocker le choix de thème que fait l'utilisateur pour avoir un thème persistant entre les changements de pages (ou si l'utilisateur revient sur notre site après avoir fermé la page).
 
 Nous allons utiliser le **localStorage** pour stocker la valeur du thème. Il faudra ensuite, à l'ouverture d'une page, vérifier si l'utilisateur à déjà stocker une valeur et si oui, afficher le bon thème.
 
@@ -244,7 +244,7 @@ Il est toujours très important de tester nos projets.
 Prenons un exemple:
 - j'ai choisi un thème clair sur mon ordinateur;
 - j'arrive sur un site;
-- le js du site check mon **localStorage**, il est vide, c'est le première fois que je vais surle site;
+- le js du site check mon **localStorage**, il est vide, c'est la première fois que je vais sur le site;
 - le CSS check mon média `prefers-color-scheme`, il n'est pas en dark, les variables du `:root` sont utilisées;
 - je vois un bouton pour un changement de thème, je click:
   -  mon javascript ajoute un `data-theme="dark"` sur le body;
@@ -256,7 +256,7 @@ Prenons un exemple:
 Prenons un autre exemple:
 - j'ai choisi un thème **DARK** sur mon ordinateur;
 - j'arrive sur un site;
-- le js du site check mon **localStorage**, il est vide, c'est le première fois que je vais surle site;
+- le js du site check mon **localStorage**, il est vide, c'est la première fois que je vais sur le site;
 - le CSS check mon média `prefers-color-scheme`, il est en dark, les variables dark sont utilisées;
 - je vois un bouton pour un changement de thème sombre, je click:
   -  rien ne se passe? :sweat_smile:
@@ -272,7 +272,7 @@ Il faut ajouter une condition en plus, quand l'utilisateur clique sur le bouton,
 const userDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 ```
 
-Ensuite on vérifie sur le **localStorage** est déjà définit sur dark ou si le **localStorage** est vide mais que le userDark est en dark.
+Ensuite on vérifie sur le **localStorage** si il est déjà défini sur dark ou si le **localStorage** est vide mais que le userDark est en dark.
 
 ```JAVASCRIPT
 let theme = localStorage.getItem("theme");
